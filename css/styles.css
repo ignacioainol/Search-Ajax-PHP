@@ -30,12 +30,11 @@ img.logo_one{
 	background: #f1f1f1;
 	padding: 5px;
 }
+.art a{
+	text-decoration: none;
+	color: #666
+}
 .titulo{
 	font-size: 22px;
 	text-transform: uppercase;;
-}
-.contenido:link{
-	 background: red;
-	 color: #666;
-	 text-decoration: none;
 }

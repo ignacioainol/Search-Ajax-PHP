@@ -10,10 +10,10 @@ require_once '../conn/connect.php';
 
 $search = '';
 if(isset($_POST['search'])){
-	$search = $_POST['search'];
+	$search = strtolower($_POST['search']);
 }
 
-$query = "SELECT * FROM articulos WHERE articulo LIKE '%{$search}%' OR nombre LIKE '%{$search}%'ORDER BY visitas LIMIT 5";
+$query = "SELECT * FROM articulos WHERE articulo LIKE '%{$search}%' OR nombre LIKE '%{$search}%'ORDER BY visitas DESC LIMIT 5";
 
 $result = $connect->query($query);
 $row = mysqli_fetch_assoc($result);

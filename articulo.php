@@ -2,8 +2,9 @@
 <?php 
 	$search = '';
 	if(isset($_GET['search'])){
-		$search = $_GET['search'];
+		$search = strtolower($_GET['search']);
 	}
+
 
 	$id = '';
 	if(isset($_GET['id'])){
@@ -15,6 +16,9 @@
 	$result = $connect->query($query);
 	$row = mysqli_fetch_assoc($result);
 	$total = mysqli_num_rows($result);
+
+	$insert = "UPDATE articulos SET visitas=visitas+1 WHERE id ={$id}";
+	$update = $connect->query($insert) || die("No se ha podido actualizar la visita");
  ?>
 <!DOCTYPE html>
 <html lang="es">
